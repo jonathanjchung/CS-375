@@ -1,0 +1,10 @@
+{
+    "user": "USERNAME",
+    "host": "localhost",
+    "database": "userdata",
+    "password": "PASSWORD",
+    "port": 5432,
+    "CLIENT_ID": "your_client_id_here",
+    "CLIENT_SECRET": "your_client_secret_here",
+    "REDIRECT_URI": "your_redirect_uri_here"
+}

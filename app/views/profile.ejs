@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="profile.css">
+    <link rel="stylesheet" href="navbar.css">
+    <title>Musify - Profile</title>
+
+</head>
+<body>
+    <div class="navbar-container">
+        <%- include('navbar') %>
+    </div>
+
+    <div class="profile-content">
+        <h1>My Profile</h1>
+        <img src="<%= profilePicture %>" id="profile-pic" alt="User Profile Picture">
+        <p>Display Name: <%= user.display_name %></p>
+        <p id = "spotify_id">Spotify ID: <%= user.spotify_id %></p>
+        <p id = "user" hidden><%= currentlySignedIn %></p>
+        
+        <button id = "follow"><%= followCheck %></button>
+
+        <div class="table-container">
+            <h2 class="posts-heading">Posts</h2>
+            <% userPosts.rows.forEach(post => { %>
+                <div class="post">
+                    <p><strong>@</strong><strong><%= post.spotify_id %></strong></p>
+                    <p><strong></strong><%= post.post %></p>
+                    <p class="post-date"><strong></strong><%= post.created_at %></p>
+                </div>
+            <% }) %>
+        </div>
+
+
+        <div class="top-section">
+            <div class="top-container">
+                <h2>Top Artists</h2>
+                <ul class="top-list">
+                    <% topArtists.forEach(artist => { %>
+                        <li><%= artist.name %></li>
+                    <% }) %>
+                </ul>
+            </div>
+        
+            <div class="top-container">
+                <h2>Top Tracks</h2>
+                <ul class="top-list">
+                    <% topTracks.forEach(track => { %>
+                        <li><%= track.name %> by <%= track.artists[0].name %></li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src = "profile.js"></script>
+</body>
+</html>

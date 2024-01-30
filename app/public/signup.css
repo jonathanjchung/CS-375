@@ -1,0 +1,19 @@
+#main-container {
+    display: grid;
+    justify-items: center;
+}
+
+#error-message {
+    display: grid;
+    justify-items: center;
+    margin: 25px;
+}
+
+#signup-form {
+    display: grid;
+    justify-items: center;
+}
+
+input {
+    margin-bottom: 10px;
+}
